@@ -1,0 +1,20 @@
+.wrapper {
+  width: 100%;
+  border: 2px solid black;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin: 0.75rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  background-color: aliceblue;
+}
+
+.wrapper:hover {
+  background-color: rgb(216, 232, 246);
+}
+
+.text {
+  font-weight: 700;
+  font-size: 1.25rem;
+}

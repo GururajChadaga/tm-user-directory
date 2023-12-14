@@ -1,5 +1,7 @@
+import UserDirectory from './components/UserDirectory';
+
 const App = () => {
-  return <>User Directory</>;
+  return <UserDirectory />;
 };
 
 export default App;

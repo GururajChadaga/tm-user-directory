@@ -1,0 +1,12 @@
+.wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  overflow: hidden scroll;
+}
+
+.title {
+  margin: 1rem;
+}

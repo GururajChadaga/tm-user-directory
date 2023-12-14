@@ -12,3 +12,12 @@ export const getUsersWithPosts = (users, posts) => {
     return { ...user, posts: postsByUserId[user.id] ?? [] };
   });
 };
+
+export const getFormattedAddress = (addressData) => {
+  if (!addressData) {
+    return '';
+  }
+
+  const { street, suite, city, zipcode } = addressData;
+  return `${street}, ${suite}, ${city}, ${zipcode}`;
+};

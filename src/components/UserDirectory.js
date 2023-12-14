@@ -1,25 +1,11 @@
 import UserCard from './UserCard';
 import styles from './UserDirectory.module.css';
-import { URLS } from '../utils/constants';
-import { getUsersWithPosts } from '../utils/helpers';
-import { useFetch } from '../utils/hooks/useFetch';
+import { useContext } from 'react';
+import { UserContext } from '../store/UserContext';
 
 const UserDirectory = () => {
-  const {
-    data: users,
-    loading: usersLoading,
-    error: usersError,
-  } = useFetch(URLS.USERS);
+  const { usersWithPosts, isLoading, hasError } = useContext(UserContext);
 
-  const {
-    data: posts,
-    loading: postsLoading,
-    error: postsError,
-  } = useFetch(URLS.POSTS);
-
-  const hasError = usersError || postsError;
-  const isLoading = usersLoading || postsLoading;
-  const usersWithPosts = getUsersWithPosts(users, posts);
   return (
     <div className={styles.wrapper}>
       <h1 className={styles.title}>Directory</h1>

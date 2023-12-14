@@ -1,0 +1,19 @@
+.postsContainer {
+  margin: 1rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 1rem;
+}
+
+.postCard {
+  padding: 1rem;
+  border: 2px solid black;
+  border-radius: 2rem;
+  background-color: aliceblue;
+  cursor: pointer;
+}
+
+.postCard:hover {
+  background-color: rgb(216, 232, 246);
+}

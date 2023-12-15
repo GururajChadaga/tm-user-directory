@@ -11,7 +11,8 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: stretch;
+  margin-bottom: 1rem;
 }
 
 .btn {
@@ -23,6 +24,7 @@
   background-color: aliceblue;
 }
 
-.btn:hover {
-  background-color: rgb(216, 232, 246);
+.btn:hover,
+.btn:focus-visible {
+  background-color: rgb(197, 220, 239);
 }

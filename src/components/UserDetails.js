@@ -3,6 +3,7 @@ import styles from './UserDetails.module.css';
 import ProfilePage from './ProfilePage';
 import { useContext } from 'react';
 import { UserContext } from '../store/UserContext';
+import CountryClock from './CountryClock';
 
 const UserDetails = () => {
   const { usersWithPosts } = useContext(UserContext);
@@ -18,7 +19,7 @@ const UserDetails = () => {
         <button className={styles.btn} onClick={handleBackClick}>
           Back
         </button>
-        <div>Country dropdown</div>
+        <CountryClock />
       </div>
       <ProfilePage userData={userData} />
     </div>

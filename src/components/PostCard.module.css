@@ -14,6 +14,7 @@
   cursor: pointer;
 }
 
-.postCard:hover {
-  background-color: rgb(216, 232, 246);
+.postCard:hover,
+.postCard:focus-visible {
+  background-color: rgb(197, 220, 239);
 }

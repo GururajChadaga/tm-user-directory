@@ -5,21 +5,27 @@ export const useFetch = (url) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        setLoading(true);
-        const response = await fetch(url);
-        const result = await response.json();
-        setData(result);
-      } catch (error) {
-        setError(error);
-      } finally {
-        setLoading(false);
-      }
-    };
+  const fetchData = async (url, signal) => {
+    try {
+      setLoading(true);
+      const response = await fetch(url, signal);
+      const result = await response.json();
+      setData(result);
+    } catch (error) {
+      setError(error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-    fetchData();
+  useEffect(() => {
+    const fetchDataController = new AbortController();
+    const { signal } = fetchDataController;
+    if (url) fetchData(url, signal);
+
+    return () => {
+      fetchDataController.abort();
+    };
   }, [url]);
 
   return { data, loading, error };

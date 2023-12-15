@@ -1,16 +1,9 @@
 .wrapper {
   width: 100%;
-  border: 2px solid black;
-  border-radius: 1rem;
   padding: 1.5rem;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
-  background-color: aliceblue;
-}
-
-.wrapper:hover {
-  background-color: rgb(216, 232, 246);
 }
 
 .text {
@@ -22,4 +15,12 @@
   all: unset;
   width: 100%;
   margin: 0.75rem;
+  background-color: aliceblue;
+  border: 2px solid black;
+  border-radius: 1rem;
+}
+
+.link:hover,
+.link:focus-visible {
+  background-color: rgb(197, 220, 239);
 }

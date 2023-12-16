@@ -14,6 +14,16 @@
   background-color: rgb(197, 220, 239);
 }
 
+.postModal {
+  padding: 1rem;
+  border: 1px solid rgb(144, 187, 223);
+  border-radius: 2rem;
+  background-color: aliceblue;
+  width: 17rem;
+  height: 17rem;
+  font-size: 1.125rem;
+}
+
 .postTitle {
   font-weight: 600;
   display: flex;
@@ -32,5 +42,13 @@
   .postCard {
     width: 13rem;
     height: 13rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .postModal {
+    width: 25rem;
+    height: 25rem;
+    font-size: 1.5rem;
   }
 }

@@ -50,13 +50,15 @@ const CountryClock = () => {
         </div>
       )}
 
-      <Clock
-        datetime={timezoneData?.datetime ?? ''}
-        isClockPaused={isClockPaused}
-      />
-      <button className={styles.btn} onClick={handleClick}>{`${
-        isClockPaused ? 'Start' : 'Pause'
-      }`}</button>
+      <div className={styles.clockContainer}>
+        <Clock
+          datetime={timezoneData?.datetime ?? ''}
+          isClockPaused={isClockPaused}
+        />
+        <button className={styles.btn} onClick={handleClick}>{`${
+          isClockPaused ? 'Start' : 'Pause'
+        }`}</button>
+      </div>
     </div>
   );
 };

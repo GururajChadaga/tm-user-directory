@@ -1,20 +1,36 @@
-.postsContainer {
-  margin: 1rem 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto auto;
-  gap: 1rem;
-}
-
 .postCard {
   padding: 1rem;
-  border: 2px solid black;
+  border: 1px solid rgb(144, 187, 223);
   border-radius: 2rem;
   background-color: aliceblue;
   cursor: pointer;
+  width: 16rem;
+  height: 16rem;
+  overflow: hidden;
 }
 
 .postCard:hover,
 .postCard:focus-visible {
   background-color: rgb(197, 220, 239);
+}
+
+.postTitle {
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.postBody {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (min-width: 520px) and (max-width: 900px) {
+  .postCard {
+    width: 13rem;
+    height: 13rem;
+  }
 }

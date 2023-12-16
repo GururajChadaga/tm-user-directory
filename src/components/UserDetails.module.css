@@ -10,8 +10,8 @@
 .header {
   width: 100%;
   display: flex;
-  justify-content: space-between;
-  align-items: stretch;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 1rem;
 }
 
@@ -27,4 +27,18 @@
 .btn:hover,
 .btn:focus-visible {
   background-color: rgb(197, 220, 239);
+}
+
+@media (min-width: 520px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .header {
+    align-items: stretch;
+  }
 }

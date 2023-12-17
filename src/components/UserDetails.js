@@ -4,9 +4,11 @@ import ProfilePage from './ProfilePage';
 import { useContext } from 'react';
 import { UserContext } from '../store/UserContext';
 import CountryClock from './CountryClock';
+import { ProfilePageLoader } from './Loaders';
+import Error from './Error';
 
 const UserDetails = () => {
-  const { usersWithPosts } = useContext(UserContext);
+  const { usersWithPosts, isLoading, hasError } = useContext(UserContext);
   const { userId } = useParams();
   const userData = usersWithPosts.find((user) => user.id === +userId);
   const navigate = useNavigate();
@@ -21,7 +23,9 @@ const UserDetails = () => {
         </button>
         <CountryClock />
       </div>
-      <ProfilePage userData={userData} />
+      {!isLoading && <ProfilePage userData={userData} />}
+      {isLoading && <ProfilePageLoader />}
+      {hasError && <Error />}
     </div>
   );
 };

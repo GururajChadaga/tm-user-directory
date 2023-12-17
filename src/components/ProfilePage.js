@@ -1,47 +1,14 @@
-import { getFormattedAddress } from '../utils/helpers';
 import PostCard from './PostCard';
 import styles from './ProfilePage.module.css';
+import SummaryCard from './SummaryCard';
 
 const ProfilePage = ({ userData }) => {
-  const {
-    name = '',
-    username = '',
-    email = '',
-    phone = '',
-    company = {},
-    address = {},
-    posts = [],
-  } = userData ?? {};
+  const { posts = [] } = userData ?? {};
 
   return (
     <section className={styles.wrapper}>
       <h2>Profile Page</h2>
-      <section className={styles.summaryContainer}>
-        <section className={styles.summarySection}>
-          <section className={styles.leftSubSection}>
-            <p className={styles.summaryItem}>
-              <b>{name}</b>
-            </p>
-          </section>
-          <section className={styles.rightSubSection}>
-            <p className={styles.summaryItem}>
-              <i>{getFormattedAddress(address)}</i>
-            </p>
-          </section>
-        </section>
-        <section className={styles.summarySection}>
-          <section className={styles.leftSubSection}>
-            <p className={styles.summaryItem}>{username}</p>
-            <p className={styles.summaryItem}>
-              {company?.catchPhrase ?? 'Default'}
-            </p>
-          </section>
-          <section className={styles.rightSubSection}>
-            <p className={styles.summaryItem}>{email}</p>
-            <p className={styles.summaryItem}>{phone}</p>
-          </section>
-        </section>
-      </section>
+      <SummaryCard userData={userData} />
       {posts.length > 0 && (
         <section className={styles.postsContainer}>
           {posts.map(({ id, title, body }) => (

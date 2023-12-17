@@ -30,14 +30,6 @@
   margin: 0 0.5rem;
 }
 
-.dropdownLoader {
-  margin: 0 0.5rem;
-  width: 15rem;
-  height: 1.5rem;
-  background-color: silver;
-  border-radius: 0.5rem;
-}
-
 .select {
   width: 15rem;
   height: 1.5rem;
@@ -73,10 +65,6 @@
     margin-top: 0;
   }
   .select {
-    width: 20rem;
-    height: auto;
-  }
-  .dropdownLoader {
     width: 20rem;
     height: auto;
   }

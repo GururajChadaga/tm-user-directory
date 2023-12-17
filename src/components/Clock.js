@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import styles from './Clock.module.css';
 import { getTimeFromTimestamp } from '../utils/helpers';
+import { ClockLoader } from './Loaders';
 
 const Clock = ({ datetime, isClockPaused }) => {
   const [time, setTime] = useState(null);
@@ -43,11 +44,7 @@ const Clock = ({ datetime, isClockPaused }) => {
           <span>{`${time.hours}:${time.minutes}:${time.seconds}`}</span>
         </div>
       )}
-      {!time && (
-        <div className={styles.clockLoader}>
-          <span>00:00:00</span>
-        </div>
-      )}
+      {!time && <ClockLoader />}
     </>
   );
 };

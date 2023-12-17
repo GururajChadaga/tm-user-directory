@@ -1,5 +1,9 @@
 export const getUsersWithPosts = (users, posts) => {
-  if (!users || !posts) return [];
+  if (!users) return [];
+  if (!posts)
+    return users.map((user) => {
+      return { ...user, posts: [] };
+    });
 
   const postsByUserId = {};
   posts.forEach((post) => {
@@ -18,7 +22,7 @@ export const getFormattedAddress = (addressData) => {
     return '';
   }
 
-  const { street, suite, city, zipcode } = addressData;
+  const { street = '', suite = '', city = '', zipcode = '' } = addressData;
   return `${street}, ${suite}, ${city}, ${zipcode}`;
 };
 

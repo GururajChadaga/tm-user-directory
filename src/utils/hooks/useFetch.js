@@ -9,10 +9,11 @@ export const useFetch = (url) => {
     try {
       setLoading(true);
       const response = await fetch(url, signal);
+      if (!response.ok) throw new Error('API failed');
       const result = await response.json();
       setData(result);
     } catch (error) {
-      setError(error);
+      if (!signal.aborted) setError(error);
     } finally {
       setLoading(false);
     }

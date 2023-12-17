@@ -2,6 +2,8 @@ import UserCard from './UserCard';
 import styles from './UserDirectory.module.css';
 import { useContext } from 'react';
 import { UserContext } from '../store/UserContext';
+import { UserCardLoader } from './Loaders';
+import Error from './Error';
 
 const UserDirectory = () => {
   const { usersWithPosts, isLoading, hasError } = useContext(UserContext);
@@ -13,8 +15,8 @@ const UserDirectory = () => {
         usersWithPosts.map((user) => (
           <UserCard key={user?.id} userData={user} />
         ))}
-      {isLoading && <span>Loading...</span>}
-      {hasError && <span>Error!</span>}
+      {isLoading && <UserCardLoader />}
+      {hasError && <Error />}
     </div>
   );
 };

@@ -3,6 +3,7 @@ import styles from './CountryClock.module.css';
 import { useFetch } from '../utils/hooks/useFetch';
 import { URLS } from '../utils/constants';
 import Clock from './Clock';
+import { DropDownLoader } from './Loaders';
 
 const CountryClock = () => {
   const [selectedTimezone, setSelectedTimezone] = useState();
@@ -33,7 +34,7 @@ const CountryClock = () => {
   return (
     <div className={styles.wrapper}>
       {timezonesLoading || !timezones || timezones?.length === 0 ? (
-        <div className={styles.dropdownLoader} />
+        <DropDownLoader />
       ) : (
         <div className={styles.customDropdown}>
           <select

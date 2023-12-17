@@ -1,0 +1,11 @@
+.wrapper {
+  width: 100%;
+  padding: 1rem;
+  max-width: 45rem;
+  background-color: salmon;
+  border: 2px solid rgb(202, 86, 73);
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+}
